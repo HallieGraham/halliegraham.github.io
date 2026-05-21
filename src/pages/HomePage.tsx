@@ -63,7 +63,7 @@ export default function HomePage() {
 
         <div className="relative z-10 mx-auto w-full max-w-6xl">
         <h1 className="mb-2 flex flex-wrap items-baseline gap-x-3 gap-y-3 text-5xl font-semibold tracking-tight sm:text-6xl lg:text-8xl">HALLIE GRAHAM</h1>
-          <h1 className="mb-10 flex flex-wrap items-baseline gap-x-3 gap-y-3 text-5xl font-semibold tracking-tight sm:text-6xl lg:text-5xl">
+          <h1 className="mb-5 flex flex-wrap items-baseline gap-x-3 gap-y-3 text-3xl font-semibold tracking-tight sm:mb-10 sm:text-6xl lg:text-5xl">
            
             <span className="whitespace-nowrap">A Passion for</span>
             <RotatingText
@@ -86,7 +86,7 @@ export default function HomePage() {
           <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_520px] lg:gap-14">
             <div className="max-w-2xl">
               <div>
-                <p className="text-base font-medium leading-relaxed text-white/90 sm:text-lg">
+                <p className="text-sm font-medium leading-relaxed text-white/90 sm:text-lg">
                 Printed Textile Designer who combines physical and digital design methods. With an emphasis on layered colour, technical knowledge and material compositions. Creating thoughtful designs to bring contemporary and innovative solutions to the market.
                 </p>
 
