@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { ProgressiveImage } from "@/components/ProgressiveImage";
 
 const VIMEO_EMBED_SRC =
   "https://player.vimeo.com/video/1190994271?badge=0&autopause=0&player_id=0&app_id=58479";
@@ -37,10 +38,11 @@ Specialized in Print, I have a strong passion for dye mixing, hand printed techn
           <div className="flex flex-col gap-5">
             <article className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
               <div className="relative mx-auto aspect-[4/5] max-h-44 w-full max-w-[200px] overflow-hidden bg-neutral-100">
-                <img
+                <ProgressiveImage
                   src={portrait}
                   alt="Portrait of Hallie Graham"
-                  className="h-full w-full object-cover"
+                  fit="cover"
+                  className="h-full w-full"
                   loading="eager"
                 />
               </div>

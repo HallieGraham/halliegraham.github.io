@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { motion } from "motion/react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { getGridImagePaths, PORTFOLIO_COLLECTIONS } from "@/data/portfolio-collections";
+import { thumbFor } from "@/lib/images";
 
 const portfolioDropdownPanel = {
   hidden: { opacity: 0, y: -6 },
@@ -262,7 +263,7 @@ export default function Navbar() {
                               </div>
                               {coverSrc ? (
                                 <img
-                                  src={coverSrc}
+                                  src={thumbFor(coverSrc)}
                                   alt=""
                                   className={[
                                     "h-10 w-10 shrink-0 rounded-md object-cover",
@@ -429,7 +430,7 @@ export default function Navbar() {
                             <span className="min-w-0 flex-1 truncate">{c.title}</span>
                             {coverSrc ? (
                               <img
-                                src={coverSrc}
+                                src={thumbFor(coverSrc)}
                                 alt=""
                                 className={[
                                   "h-9 w-9 shrink-0 rounded object-cover",

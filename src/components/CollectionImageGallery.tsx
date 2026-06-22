@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import { ProgressiveImage } from "@/components/ProgressiveImage";
+import { thumbFor } from "@/lib/images";
 
 type CollectionImageGalleryProps = {
   images: string[];
@@ -163,12 +165,13 @@ export function CollectionImageGallery({
         aria-label="Expanded image"
       >
         <div className="absolute inset-0 flex min-h-0 min-w-0 items-center justify-center px-14 py-4 sm:px-20 sm:py-6">
-          <img
+          <ProgressiveImage
             key={mainSrc}
             src={mainSrc}
             alt={lightboxTitle ?? ""}
-            className="h-full w-full object-contain"
-            decoding="async"
+            fit="contain"
+            className="h-full w-full"
+            fetchPriority="high"
           />
         </div>
         {lightboxTitle && (
@@ -252,13 +255,12 @@ export function CollectionImageGallery({
           >
             <ExpandIcon className={compact ? "h-3.5 w-3.5" : "h-4 w-4 sm:h-5 sm:w-5"} />
           </button>
-          <div className="flex h-full w-full items-center justify-center p-1 sm:p-2">
-            <img
+          <div className="h-full w-full p-1 sm:p-2">
+            <ProgressiveImage
               key={mainSrc}
               src={mainSrc}
-              alt=""
-              className="max-h-full max-w-full object-contain"
-              decoding="async"
+              fit="contain"
+              className="h-full w-full"
               fetchPriority="high"
             />
           </div>
@@ -289,7 +291,7 @@ export function CollectionImageGallery({
                   aria-current={isSelected ? "true" : undefined}
                 >
                   <img
-                    src={src}
+                    src={thumbFor(src)}
                     alt=""
                     className={compact ? "h-9 w-9 object-cover" : "h-11 w-11 object-cover sm:h-12 sm:w-12"}
                     loading="lazy"

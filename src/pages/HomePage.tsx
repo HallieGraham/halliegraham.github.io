@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { PORTFOLIO_COLLECTIONS } from "@/data/portfolio-collections";
+import { ProgressiveImage } from "@/components/ProgressiveImage";
 import RotatingText from "../components/RotatingText";
 
 export default function HomePage() {
@@ -47,16 +48,19 @@ export default function HomePage() {
       <section className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-hidden px-4 py-10 text-left text-white sm:px-6 lg:py-0">
         <div className="pointer-events-none absolute inset-0 z-0 isolate">
           {heroBackgrounds.map((src, i) => (
-            <img
+            <div
               key={src}
-              src={src}
-              alt=""
-              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-in-out ${
+              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
                 i === heroBgIndex ? "z-[1] opacity-100" : "z-0 opacity-0"
               }`}
-              decoding="async"
-              fetchPriority={i === 0 ? "high" : "low"}
-            />
+            >
+              <ProgressiveImage
+                src={src}
+                fit="cover"
+                className="h-full w-full"
+                fetchPriority={i === 0 ? "high" : "low"}
+              />
+            </div>
           ))}
           <div className="absolute inset-0 z-[2] bg-black/45" aria-hidden />
         </div>

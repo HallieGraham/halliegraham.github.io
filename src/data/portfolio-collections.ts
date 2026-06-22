@@ -88,23 +88,314 @@ const STORIES_SET_IN_STONE_FILES = [
   "18.jpg",
   "19.jpg",
   "20.jpg",
-  "21.jpg",
   "22.jpg",
   "23.jpg",
   "24.jpg",
+  "25.jpg",
   "p1.jpeg",
   "p2.jpeg",
   "p3.jpg",
   "p4.jpg",
   "e1.jpeg",
-  "e2.jpg",
   "e3.jpg",
   "e4.jpg",
   "e5.jpg",
-  "e6.jpg",
   "v1.jpg",
   "v2.jpg",
 ] as const;
+
+/** Per-image detail overrides for Stories Set in Stone, keyed by filename. */
+const STORIES_SET_IN_STONE_DETAILS: Record<string, Partial<PortfolioWork>> = {
+  "10.jpg": {
+    title: "Shadowy Ruins",
+    subtitle: "Supporting Sample",
+    medium: "Reactive Dye",
+    method: "Hand Painted, Manual Screen Printed",
+    finishings: "Bondaweb on Wallpaper",
+    substrate: "Cotton",
+    galleryGroup: "Shadowy Ruins",
+  },
+  "17.jpg": {
+    title: "Shadowy Ruins",
+    subtitle: "Supporting Sample",
+    medium: "Reactive Dye",
+    method: "Hand Painted, Manual Screen Printed",
+    finishings: "Bondaweb on Wallpaper",
+    substrate: "Cotton",
+    galleryGroup: "Shadowy Ruins",
+  },
+  "p4.jpg": {
+    title: "Shadowy Ruins",
+    subtitle: "Final Wallcovering",
+    medium: "Reactive Dye, Discharge",
+    method: "Hand Painted, Manual Screen Printed",
+    finishings: "Bondaweb on Wallpaper",
+    substrate: "Silk Satin Viscose Devoré",
+    description:
+      "This pattern depicts a stylized interpretation of the shadows on the standing stones. Highlighting form and depth.",
+    galleryGroups: ["Finals", "Shadowy Ruins"],
+  },
+  "e5.jpg": {
+    title: "Shadowy Ruins",
+    subtitle: "Supporting Sample",
+    medium: "Reactive Dye",
+    method: "Hand Painted, Manual Screen Printed",
+    finishings: "Bondaweb on Wallpaper",
+    substrate: "Silk Satin Viscose Devoré",
+    galleryGroup: "Shadowy Ruins",
+  },
+  "22.jpg": {
+    title: "Standing Stones",
+    subtitle: "Final Wallcovering",
+    medium: "Reactive Dye, Devoré",
+    method: "Hand Painted, Manual Screen Printed",
+    finishings: "Bondaweb and Pigment on Wallpaper",
+    substrate: "Silk Satin Viscose Devoré",
+    description:
+      "This pattern depicts an abstract representation of the standing stones. Prevalent in many Scottish Folktales. I used form and geometric shapes to create a contemporary design.",
+    galleryGroups: ["Finals", "Standing Stones"],
+  },
+  "8.jpg": {
+    title: "Standing Stones",
+    subtitle: "Supporting Sample",
+    medium: "Reactive Dye, Devoré",
+    method: "Hand Painted, Manual Screen Printed",
+    finishings: "Bondaweb and Pigment on Wallpaper",
+    substrate: "Silk Satin Viscose Devoré",
+    galleryGroup: "Standing Stones",
+  },
+  "2.jpg": {
+    title: "Standing Stones",
+    subtitle: "Supporting Sample",
+    medium: "Reactive Dye",
+    method: "Hand Painted, Manual Screen Printed",
+    finishings: "Bondaweb on Wallpaper",
+    substrate: "Cotton",
+    galleryGroup: "Standing Stones",
+  },
+  "15.jpg": {
+    title: "Standing Stones",
+    subtitle: "Supporting Sample",
+    medium: "Reactive Dye",
+    method: "Hand Painted, Manual Screen Printed",
+    finishings: "Bondaweb on Wallpaper",
+    substrate: "Cotton",
+    galleryGroup: "Standing Stones",
+  },
+  "e4.jpg": {
+    title: "Standing Stones",
+    subtitle: "Supporting Sample",
+    medium: "Reactive Dye",
+    method: "Hand Painted, Manual Screen Printed",
+    finishings: "Bondaweb on Wallpaper",
+    substrate: "Cotton",
+    galleryGroup: "Standing Stones",
+  },
+  "14.jpg": {
+    title: "Standing Stones",
+    subtitle: "Supporting Sample",
+    medium: "Reactive Dye",
+    method: "Hand Painted, Manual Screen Printed",
+    finishings: "Bondaweb on Wallpaper",
+    substrate: "Cotton",
+    galleryGroup: "Standing Stones",
+  },
+  "p1.jpeg": {
+    title: "Standing Stones",
+    subtitle: "Sketchbook Development",
+    medium: "Ink",
+    method: "Hand Painted",
+    description: "Ink painted study of Standing Stones, for shadow and texture exploration.",
+    galleryGroups: ["Standing Stones", "Sketchbook Developments"],
+  },
+  "6.jpg": {
+    title: "Waterhorse",
+    subtitle: "Final Wallcovering",
+    medium: "Reactive Dye",
+    method: "Hand Painted, Manual Screen Printed",
+    finishings: "Bondaweb on Wallpaper",
+    substrate: "Silk Satin Viscose Devoré",
+    description:
+      "This pattern depicts a stylized interpretation of the structure of the Kelpies statues. Focusing on shape and form, I created using dramatic brushstrokes to create a magical design.",
+    galleryGroups: ["Finals", "Waterhorse"],
+  },
+  "20.jpg": {
+    title: "Waterhorse",
+    subtitle: "Supporting Sample",
+    medium: "Reactive Dye",
+    method: "Hand Painted, Manual Screen Printed",
+    finishings: "Bondaweb on Wallpaper",
+    substrate: "Cotton",
+    galleryGroup: "Waterhorse",
+  },
+  "7.jpg": {
+    title: "Waterhorse",
+    subtitle: "Supporting Sample",
+    medium: "Reactive Dye",
+    method: "Hand Painted, Manual Screen Printed",
+    finishings: "Bondaweb on Wallpaper",
+    substrate: "Cotton",
+    galleryGroup: "Waterhorse",
+  },
+  "1.jpg": {
+    title: "Steel Stallions",
+    subtitle: "Final Wallcovering",
+    medium: "Reactive Dye",
+    method: "Hand Painted, Manual Screen Printed",
+    finishings: "Bondaweb on Wallpaper",
+    substrate: "Cotton",
+    description:
+      "This pattern is inspired by the metal structure of the Kelpie statues. Stylized through sketchbook collage, this design is printed in 3 layers to create, tone and depth.",
+    galleryGroups: ["Finals", "Steel Stallions"],
+  },
+  "3.jpg": {
+    title: "Steel Stallions",
+    subtitle: "Supporting Sample",
+    medium: "Reactive Dye",
+    method: "Hand Painted, Manual Screen Printed",
+    finishings: "Bondaweb on Wallpaper",
+    substrate: "Cotton",
+    galleryGroup: "Steel Stallions",
+  },
+  "18.jpg": {
+    title: "Steel Stallions",
+    subtitle: "Supporting Sample",
+    medium: "Reactive Dye",
+    method: "Hand Painted, Manual Screen Printed",
+    finishings: "Bondaweb on Wallpaper",
+    substrate: "Cotton",
+    galleryGroup: "Steel Stallions",
+  },
+  "5.jpg": {
+    title: "Steel Stallions",
+    subtitle: "Supporting Sample",
+    medium: "Reactive Dye, Devoré",
+    method: "Hand Painted, Manual Screen Printed",
+    finishings: "Bondaweb and Pigment on Wallpaper",
+    substrate: "Silk Satin Viscose Devoré",
+    galleryGroup: "Steel Stallions",
+  },
+  "19.jpg": {
+    title: "Steel Stallions",
+    subtitle: "Supporting Sample",
+    medium: "Reactive Dye",
+    method: "Hand Painted, Manual Screen Printed",
+    finishings: "Bondaweb on Wallpaper",
+    substrate: "Cotton",
+    galleryGroup: "Steel Stallions",
+  },
+  "4.jpg": {
+    title: "Steel Stallions",
+    subtitle: "Supporting Sample",
+    medium: "Reactive Dye",
+    method: "Digital Printed",
+    finishings: "Bondaweb on Wallpaper",
+    substrate: "Cotton",
+    galleryGroup: "Steel Stallions",
+  },
+  "16.jpg": {
+    title: "Steel Stallions",
+    subtitle: "Supporting Sample",
+    medium: "Reactive Dye, Devoré",
+    method: "Hand Painted, Manual Screen Printed",
+    finishings: "Bondaweb and Pigment on Wallpaper",
+    substrate: "Silk Satin Viscose Devoré",
+    galleryGroup: "Steel Stallions",
+  },
+  "11.jpeg": {
+    title: "Steel Stallions",
+    subtitle: "Sketchbook Development",
+    medium: "Photocopied, Ink paintings",
+    method: "Collaged",
+    description:
+      "Collaged ink marks, to replicate steel structure of Kelpies statue. Development for screen.",
+    galleryGroups: ["Steel Stallions", "Sketchbook Developments"],
+  },
+  "e1.jpeg": {
+    title: "Steel Stallions",
+    subtitle: "Sketchbook Development",
+    medium: "Photocopied, Ink paintings",
+    method: "Collaged",
+    description: "Collaged ink marks, to replicate steel structure of Kelpies statue.",
+    galleryGroups: ["Steel Stallions", "Sketchbook Developments"],
+  },
+  "13.jpg": {
+    title: "Technical Samples",
+    subtitle: "Technical Sample",
+    medium: "Reactive Dye, Discharge, Espantext and Pigment",
+    method: "Hand Painted, Manual Screen Printed",
+    substrate: "Cotton",
+    galleryGroup: "Technical Samples",
+  },
+  "23.jpg": {
+    title: "Technical Samples",
+    subtitle: "Technical Sample",
+    medium: "Reactive Dye",
+    method: "Hand Painted, Manual Screen Printed",
+    substrate: "Cotton",
+    galleryGroup: "Technical Samples",
+  },
+  "25.jpg": {
+    title: "Technical Samples",
+    subtitle: "Technical Sample",
+    medium: "Reactive Dye",
+    method: "Hand Painted, Manual Screen Printed",
+    substrate: "Cotton",
+    galleryGroup: "Technical Samples",
+  },
+  "24.jpg": {
+    title: "Technical Samples",
+    subtitle: "Technical Sample",
+    medium: "Reactive Dye",
+    method: "Hand Painted, Manual Screen Printed",
+    substrate: "Cotton",
+    galleryGroup: "Technical Samples",
+  },
+  "e3.jpg": {
+    title: "Sketchbook Developments",
+    subtitle: "Sketchbook Development",
+    medium: "Ink",
+    method: "Hand Painted",
+    description:
+      "Experimenting with flowing ink and creating marks and blends. Working back on to the hide images within the flowing marks. To create an atmospheric look and feeling.",
+    galleryGroup: "Sketchbook Developments",
+  },
+  "12.jpeg": {
+    title: "Sketchbook Developments",
+    subtitle: "Sketchbook Development",
+    medium: "Ink",
+    method: "Hand Painted",
+    description:
+      "Painting to translate the idea of transformation. Changing the background to change the mood around a painting.",
+    galleryGroup: "Sketchbook Developments",
+  },
+  "9.jpeg": {
+    title: "Sketchbook Developments",
+    subtitle: "Sketchbook Development",
+    medium: "Ink",
+    method: "Hand Painted",
+    description:
+      "Painting to translate the idea of transformation. Changing the background to change the mood around a painting.",
+    galleryGroup: "Sketchbook Developments",
+  },
+  "p2.jpeg": {
+    title: "Sketchbook Developments",
+    subtitle: "Sketchbook Development",
+    medium: "Paint Pen, Fine Liner Pen",
+    method: "Hand Drawn",
+    description:
+      "Viewfinder drawings of mark found throughout my sketchbook and other paintings. For use in design development.",
+    galleryGroup: "Sketchbook Developments",
+  },
+  "p3.jpg": {
+    title: "Sketchbook Developments",
+    subtitle: "Sketchbook Development",
+    medium: "Ink",
+    method: "Hand Painted",
+    description: "Experimenting with flowing ink and creating marks and blends.",
+    galleryGroup: "Sketchbook Developments",
+  },
+};
 
 function storiesSetInStoneGalleryGroup(stem: string): string {
   const lower = stem.toLowerCase();
@@ -115,8 +406,61 @@ function storiesSetInStoneGalleryGroup(stem: string): string {
   return "Main Collection";
 }
 
-function storiesSetInStoneSortKey(filename: string): [number, number, string] {
+/**
+ * Manual ordering: curated files get an explicit sort weight so they appear in
+ * a chosen order within their gallery group. Unlisted files fall back to their
+ * natural group/number ordering (numeric → p → e → v, ascending).
+ */
+const STORIES_SET_IN_STONE_SORT_OVERRIDE: Record<string, number> = {
+  // Finals block — leads the gallery. Each also keeps the lowest weight within
+  // its own collection, so it stays first in that collection's section too.
+  "1.jpg": 100, // Steel Stallions final
+  "p4.jpg": 101, // Shadowy Ruins final
+  "22.jpg": 102, // Standing Stones final
+  "6.jpg": 103, // Waterhorse final
+  // Steel Stallions (supporting + sketchbook).
+  "3.jpg": 4001,
+  "18.jpg": 4002,
+  "5.jpg": 4003,
+  "19.jpg": 4004,
+  "4.jpg": 4005,
+  "16.jpg": 4006,
+  "11.jpeg": 4007,
+  "e1.jpeg": 4008,
+  // Shadowy Ruins.
+  "17.jpg": 5001,
+  "10.jpg": 5002,
+  "e5.jpg": 5003,
+  // Standing Stones.
+  "8.jpg": 6001,
+  "2.jpg": 6002,
+  "15.jpg": 6003,
+  "e4.jpg": 6004,
+  "14.jpg": 6005,
+  "p1.jpeg": 6006,
+  // Waterhorse.
+  "20.jpg": 7001,
+  "7.jpg": 7002,
+  // Technical Samples.
+  "13.jpg": 8000,
+  "23.jpg": 8001,
+  "25.jpg": 8002,
+  "24.jpg": 8003,
+  // Sketchbook Developments.
+  "e3.jpg": 9000,
+  "12.jpeg": 9001,
+  "9.jpeg": 9002,
+  "p2.jpeg": 9003,
+  "p3.jpg": 9004,
+  // Visualisations (last).
+  "v1.jpg": 10000,
+  "v2.jpg": 10001,
+};
+
+function storiesSetInStoneSortKey(filename: string): [number, string] {
   const stem = filename.replace(/\.[^.]+$/, "").toLowerCase();
+  const override = STORIES_SET_IN_STONE_SORT_OVERRIDE[filename];
+  if (override !== undefined) return [override, stem];
   const groupOrder = /^\d+$/.test(stem)
     ? 0
     : /^p/.test(stem)
@@ -127,16 +471,15 @@ function storiesSetInStoneSortKey(filename: string): [number, number, string] {
           ? 3
           : 0;
   const num = parseInt(stem.match(/\d+/)?.[0] ?? "0", 10);
-  return [groupOrder, num, stem];
+  return [groupOrder * 1000 + num, stem];
 }
 
 function buildStoriesSetInStoneWorks(): PortfolioWork[] {
   return [...STORIES_SET_IN_STONE_FILES]
     .sort((a, b) => {
-      const [ga, na, sa] = storiesSetInStoneSortKey(a);
-      const [gb, nb, sb] = storiesSetInStoneSortKey(b);
-      if (ga !== gb) return ga - gb;
-      if (na !== nb) return na - nb;
+      const [pa, sa] = storiesSetInStoneSortKey(a);
+      const [pb, sb] = storiesSetInStoneSortKey(b);
+      if (pa !== pb) return pa - pb;
       return sa.localeCompare(sb);
     })
     .map((file) => {
@@ -145,6 +488,7 @@ function buildStoriesSetInStoneWorks(): PortfolioWork[] {
         imagePath: `${STORIES_SET_IN_STONE_DIR}/${file}`,
         ...noWorkDetails,
         galleryGroup: storiesSetInStoneGalleryGroup(stem),
+        ...STORIES_SET_IN_STONE_DETAILS[file],
       };
     });
 }
@@ -559,8 +903,21 @@ export const PORTFOLIO_COLLECTIONS: PortfolioCollection[] = [
     subtitle: "Interiors Collection / Print / 2025",
     notes:
       "Development collection exploring the theme of Scottish mythology and folklore, experimenting with different print techniques and materials.",
+    longDescription:
+      "Focusing on the stories and folklore that captivated me as a child. My inspiration for this theme was to look deeper into these tales and focus on how stories told centuries ago are still influencing us today. Capturing imagery from the mystical Kelpies, Standing Stones and Faerie Trees. I wished to create a very atmospheric collection, creating a sense of wonder within my interior wallpapers and playing on the ideas of reality within the stories, bringing a contemporary approach to this theme. Aiming to make it more marketable in a modern industry, while still paying homage to the history and heritage of the tales. Hand painting reactive dyes onto silks and cottons to produce my fabric wallcoverings. Using techniques such as discharge and devoré to convey the theme of transformation as seen within many Scottish myths. Such as the Selkies transforming from human to seal, shapeshifters and Beira the Winter Witch who controls the changing of the seasons.",
     tags: ["Wallpaper", "Hand Painted", "Experimental"],
-    galleryGroupOrder: ["Main Collection", "Paintings", "Experimentals", "Visualisations"],
+    galleryGroupOrder: [
+      "Finals",
+      "Steel Stallions",
+      "Shadowy Ruins",
+      "Standing Stones",
+      "Waterhorse",
+      "Technical Samples",
+      "Sketchbook Developments",
+      "Paintings",
+      "Experimentals",
+      "Visualisations",
+    ],
     works: buildStoriesSetInStoneWorks(),
   },
   {

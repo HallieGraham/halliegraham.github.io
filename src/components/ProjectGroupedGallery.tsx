@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import type { PortfolioGalleryGroup, PortfolioWork } from "@/data/portfolio-collections";
+import { thumbFor } from "@/lib/images";
 
 function workSrc(base: string, work: PortfolioWork) {
   return `${base}${work.imagePath.replace(/^\//, "")}`;
@@ -48,7 +49,7 @@ export function ProjectGroupedGallery({
                     aria-current={isSelected ? "true" : undefined}
                   >
                     <img
-                      src={workSrc(base, work)}
+                      src={thumbFor(workSrc(base, work))}
                       alt={
                         work.title ||
                         work.imagePath.split("/").pop()?.replace(/\.[^.]+$/, "") ||

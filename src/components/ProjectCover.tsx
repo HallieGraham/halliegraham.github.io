@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { thumbFor } from "@/lib/images";
 
 const HOVER_INTERVAL_MS = 700;
 
@@ -40,7 +41,7 @@ export function ProjectCover({ images }: ProjectCoverProps) {
       {images.map((src, i) => (
         <img
           key={`${src}-${i}`}
-          src={src}
+          src={thumbFor(src)}
           alt=""
           className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-150 ease-out ${
             i === active ? "z-[1] opacity-100" : "z-0 opacity-0"
